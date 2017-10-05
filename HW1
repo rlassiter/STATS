@@ -3,3 +3,29 @@
 %   HOMEWORK 1 MATLAB
 %
 %
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+% Beargie code 2-77
+
+p=0;                % initialize counter for E=1
+i=0;                % initialize counter
+X = 1:1000000;      % 1 million tests
+                    % keyboard
+for i = 1:1000000   % run each test
+    a=rand();       % create random fraction
+    if a < 0.500    % assume fair coin toss
+        X(i)=0;     % lower half of random tosses go to zero
+    else
+        X(i)=1;     % upper half of random tosses go to one
+    end
+    if X(i) == 1
+        p=p+1;      % update counter for E=1
+    end
+end
+   Y= p/1000000;    % verify P(1)
+   
+   
+% Beargie code 2-79
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
