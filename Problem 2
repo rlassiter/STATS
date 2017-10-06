@@ -33,7 +33,7 @@ t = 1:trials;
 Z = (1/2).^(t);             %theory
 
 %I plotted a stem plot to show the frequency of coin flips until heads. As
-%expected, the stem plot follows a simalar curve to the function Z
+%expected, the stem plot follows a similar curve to the function Z
 
 grid on
 subplot(2,1,1)
