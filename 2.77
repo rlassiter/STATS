@@ -1,0 +1,28 @@
+%%Lassiter coin flip for problem 2.77
+clear; clc; close all;
+p = 0.5;                    
+trials = 100;                   %number of trials
+counter = 1;
+heads = 0;
+tails = 0;
+
+
+while counter <= trials
+    counter = counter +1
+    
+    coin_flip = rand;                    %sim coin flip
+
+    if coin_flip <= p                    %conditions for heads or tails
+   heads = heads +1;
+else
+   tails = tails+1;
+end   
+end 
+%plot data
+cat = categorical({'heads';'tails'});
+events = [heads, tails];
+
+bar(cat,events)
+label = {'Heads';'Tails'};
+set(gca,'xticklabel',label,'FontName','Times');
+ylabel('Number of occurrences','FontName', 'Times');
