@@ -1,0 +1,48 @@
+%% Problem 2.79 Lassiter
+% Simulate a rand var Z whose PMF us given by P_z(k) = 2^-k, k=1,2,3
+
+                                %number of coin flips
+
+trials = 100;
+numFlips = size(1:trials);
+%Run n trials of coin flipping until heads is returned
+for i = 1:trials
+%Run simulation until a heads is returned and count # of flips
+counter = 0;
+    while j ~= 1
+        counter = counter+1
+        x = rand
+        if x >= .5
+            j = 1;
+        else
+            j = 0;
+        end
+    end
+    numFlips(i) = counter;
+    j = 0;
+end
+
+tbl = tabulate(numFlips);   %gets a frequency distro of numFlips until heads
+
+max_flips = max(tbl(:,1));  %returns max num of flips until heads
+
+freq_heads = tbl(:,2);      %returns the freq distro in a vector
+
+t = 1:trials;
+
+Z = (1/2).^(t);             %theory
+
+%I plotted a stem plot to show the frequency of coin flips until heads. As
+%expected, the stem plot follows a simalar curve to the function Z
+
+grid on
+subplot(2,1,1)
+x = linspace(1,100);
+h1 = stem(1:max_flips, freq_heads);
+h1.LineWidth = 2;
+axis([0 trials 0 max_flips+10])
+
+hold on
+
+subplot(2,1,2)
+plot((1:trials),Z); 
